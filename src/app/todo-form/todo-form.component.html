@@ -1,0 +1,11 @@
+<div class="todo__form">
+  <input class="todo__input" type="text" [(ngModel)]="inpValue" />
+  <button
+    class="todo__btn"
+    type="button"
+    (click)="addTodoHandler()"
+    [disabled]="inpValue.trim().length === 0"
+  >
+    Add todo
+  </button>
+</div>

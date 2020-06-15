@@ -1,0 +1,48 @@
+.todo__form {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.todo__input {
+  width: 300px;
+  margin: 0 3px;
+  padding: 5px 10px;
+  border: 2px solid rgb(78, 81, 97);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 20px;
+  outline: none;
+}
+
+.todo__input:hover,
+.todo__input:focus {
+  border: 2px solid rgb(64, 89, 231);
+}
+
+.todo__btn {
+  padding: 5px 10px;
+  border: 2px solid rgb(78, 81, 97);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 18px;
+  line-height: 20px;
+  color: rgb(78, 81, 97);
+}
+
+.todo__btn:hover,
+.todo__btn:focus {
+  background-color: rgb(209, 225, 248);
+  border: 2px solid rgb(64, 89, 231);
+  color: rgb(98, 118, 231);
+  cursor: pointer;
+}
+
+.todo__btn:disabled {
+  background-color: rgb(90, 98, 105);
+  border: 2px solid rgb(102, 102, 102);
+  color: rgb(255, 255, 255);
+  cursor: not-allowed;
+}
