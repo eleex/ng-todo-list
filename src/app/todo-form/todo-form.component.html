@@ -3,13 +3,14 @@
     class="todo__input"
     type="text"
     [(ngModel)]="inpValue"
+    (input)="onChangeInput()"
     (keyup.enter)="addTodoHandler()"
   />
   <button
     class="todo__btn"
     type="button"
     (click)="addTodoHandler()"
-    [disabled]="inpValue.trim().length === 0"
+    [disabled]="isDisabled"
   >
     Add todo
   </button>

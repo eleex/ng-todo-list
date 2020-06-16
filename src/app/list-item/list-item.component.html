@@ -1,0 +1,34 @@
+<div class="todo-item">
+  <p
+    [ngClass]="{
+      'todo-item__header': true,
+      done: todo.isDone,
+      imp: todo.isImportant
+    }"
+  >
+    {{ todo.title | titlecase }}
+  </p>
+  <div class="todo-item__btn-wrapper">
+    <button
+      class="todo-item__btn todo-item__btn--imp"
+      type="button"
+      (click)="impHandler()"
+    >
+      Imp
+    </button>
+    <button
+      class="todo-item__btn todo-item__btn--done"
+      type="button"
+      (click)="doneHandler()"
+    >
+      Done
+    </button>
+    <button
+      class="todo-item__btn todo-item__btn--del"
+      type="button"
+      (click)="delHandler()"
+    >
+      Del
+    </button>
+  </div>
+</div>

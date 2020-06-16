@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-
-export interface Todo {
-  id: number;
-  title: string;
-  isImportant: boolean;
-  isDone: boolean;
-}
+import { Todo } from './models/todo.model';
 
 @Component({
   selector: 'app-root',

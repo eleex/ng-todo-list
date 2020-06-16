@@ -3,7 +3,6 @@
     type="text"
     class="todo-search__input"
     [placeholder]="searchPlaceholder"
-    [(ngModel)]="searchValue"
-    (input)="onChangeHandler()"
+    (input)="onChangeHandler($event.target.value)"
   />
 </div>

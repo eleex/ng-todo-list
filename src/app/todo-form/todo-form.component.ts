@@ -10,10 +10,17 @@ export class TodoFormComponent {
 
   inpValue = '';
 
+  isDisabled = true;
+
+  onChangeInput() {
+    this.isDisabled = this.inpValue.trim() === '' ? true : false;
+  }
+
   addTodoHandler() {
     if (this.inpValue.trim()) {
       this.addTodo.emit(this.inpValue);
       this.inpValue = '';
+      this.isDisabled = true;
     }
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Todo } from '../app.component';
+import { Todo } from '../models/todo.model';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,18 +7,11 @@ import { Todo } from '../app.component';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent {
-  @Input() todo: Todo;
+  @Input() itemsList: Todo[];
 
   @Output() delTodo = new EventEmitter<number>();
 
-  impHandler() {
-    this.todo.isImportant = !this.todo.isImportant;
-  }
-
-  doneHandler() {
-    this.todo.isDone = !this.todo.isDone;
-  }
-  delHandler() {
-    this.delTodo.emit(this.todo.id);
+  onDelTodo(id: number): void {
+    this.delTodo.emit(id);
   }
 }

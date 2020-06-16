@@ -1,54 +1,5 @@
-.todo-item {
-  display: flex;
-  width: 400px;
-  margin: 0 auto 10px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.todo-item__header {
+ul {
   margin: 0;
-  font-size: 22px;
-}
-
-.todo-item__btn {
-  margin: 1px;
-  padding: 5px;
-  border: 2px solid rgb(78, 81, 97);
-  border-radius: 4px;
-  box-sizing: border-box;
-  background-color: #fff;
-  font-size: 18px;
-  line-height: 20px;
-  color: rgb(78, 81, 97);
-  cursor: pointer;
-}
-
-.todo-item__btn--imp:hover,
-.todo-item__btn--imp:focus {
-  background-color: rgb(209, 225, 248);
-  border: 2px solid rgb(29, 147, 216);
-  color: rgb(29, 147, 216);
-}
-
-.todo-item__btn--done:hover,
-.todo-item__btn--done:focus {
-  background-color: rgb(224, 192, 253);
-  border: 2px solid rgb(43, 13, 99);
-  color: rgb(43, 13, 99);
-}
-
-.todo-item__btn--del:hover,
-.todo-item__btn--del:focus {
-  background-color: rgb(255, 202, 246);
-  border: 2px solid rgb(99, 13, 53);
-  color: rgb(99, 13, 53);
-}
-
-.done {
-  text-decoration: line-through;
-}
-.imp {
-  font-weight: bold;
-  color: rgb(21, 107, 156);
+  padding: 0;
+  list-style: none;
 }

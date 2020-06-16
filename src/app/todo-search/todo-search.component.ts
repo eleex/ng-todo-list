@@ -9,9 +9,8 @@ export class TodoSearchComponent {
   @Output() searchInput = new EventEmitter<string>();
 
   searchPlaceholder = 'Search todo...';
-  searchValue = '';
 
-  onChangeHandler() {
-    this.searchInput.emit(this.searchValue);
+  onChangeHandler(value: string) {
+    this.searchInput.emit(value);
   }
 }
