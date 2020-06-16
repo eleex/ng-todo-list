@@ -1,5 +1,10 @@
 <div class="todo__form">
-  <input class="todo__input" type="text" [(ngModel)]="inpValue" />
+  <input
+    class="todo__input"
+    type="text"
+    [(ngModel)]="inpValue"
+    (keyup.enter)="addTodoHandler()"
+  />
   <button
     class="todo__btn"
     type="button"
