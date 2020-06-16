@@ -28,7 +28,7 @@ export class AppComponent {
 
   term = '';
 
-  termTodo = this.filterTodo();
+  filteredTodo = this.filterTodo();
 
   currentId = 20;
 
@@ -41,21 +41,24 @@ export class AppComponent {
     };
 
     this.todoList.unshift(todo);
-    this.termTodo = this.filterTodo();
+    this.filteredTodo = this.filterTodo();
 
     this.currentId++;
   }
 
   onDelete(id: number) {
     this.todoList = this.todoList.filter((todo) => todo.id !== id);
+    this.filteredTodo = this.filterTodo();
   }
 
   onSearch(term: string) {
     this.term = term;
-    this.termTodo = this.filterTodo();
+    this.filteredTodo = this.filterTodo();
   }
 
   filterTodo() {
-    return this.todoList.filter((todo) => todo.title.includes(this.term));
+    return this.todoList.filter((todo) =>
+      todo.title.toLowerCase().includes(this.term.toLowerCase())
+    );
   }
 }

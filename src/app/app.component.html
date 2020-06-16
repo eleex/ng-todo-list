@@ -2,7 +2,7 @@
   <h1 class="todo__header">{{ title }}</h1>
   <app-todo-form (addTodo)="onAdd($event)"></app-todo-form>
   <app-todo-list
-    *ngFor="let todo of termTodo"
+    *ngFor="let todo of filteredTodo"
     [todo]="todo"
     (delTodo)="onDelete($event)"
   ></app-todo-list>
