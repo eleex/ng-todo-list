@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoSearchComponent } from './todo-search/todo-search.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoFormComponent, TodoListComponent],
+  declarations: [AppComponent, TodoFormComponent, TodoListComponent, TodoSearchComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

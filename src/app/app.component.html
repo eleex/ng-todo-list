@@ -2,8 +2,9 @@
   <h1 class="todo__header">{{ title }}</h1>
   <app-todo-form (addTodo)="onAdd($event)"></app-todo-form>
   <app-todo-list
-    *ngFor="let todo of todoList"
+    *ngFor="let todo of termTodo"
     [todo]="todo"
     (delTodo)="onDelete($event)"
   ></app-todo-list>
+  <app-todo-search (searchInput)="onSearch($event)"></app-todo-search>
 </div>

@@ -1,0 +1,23 @@
+.todo-search {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-search__input {
+  width: 300px;
+  margin-top: 15px;
+  margin-left: 3px;
+  margin-right: 100px;
+  padding: 5px 10px;
+  border: 2px solid rgb(78, 81, 97);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 20px;
+  outline: none;
+}
+
+.todo-search__input:hover,
+.todo-search__input:focus {
+  border: 2px solid rgb(64, 89, 231);
+}

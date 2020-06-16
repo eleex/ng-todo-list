@@ -26,6 +26,10 @@ export class AppComponent {
     },
   ];
 
+  term = '';
+
+  termTodo = this.filterTodo();
+
   currentId = 20;
 
   onAdd(title: string) {
@@ -37,11 +41,21 @@ export class AppComponent {
     };
 
     this.todoList.unshift(todo);
+    this.termTodo = this.filterTodo();
 
     this.currentId++;
   }
 
   onDelete(id: number) {
     this.todoList = this.todoList.filter((todo) => todo.id !== id);
+  }
+
+  onSearch(term: string) {
+    this.term = term;
+    this.termTodo = this.filterTodo();
+  }
+
+  filterTodo() {
+    return this.todoList.filter((todo) => todo.title.includes(this.term));
   }
 }
