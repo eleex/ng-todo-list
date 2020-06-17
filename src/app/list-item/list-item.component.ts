@@ -1,19 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Todo } from '../models/todo.model';
+import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-list-item',
   templateUrl: 'list-item.component.html',
   styleUrls: ['./list-item.component.css'],
 })
-export class ListItemComponent implements OnInit {
+export class ListItemComponent {
   @Input() todo: Todo;
 
-  @Output() delTodo = new EventEmitter<number>();
-
-  constructor() {}
-
-  ngOnInit() {}
+  constructor(private todoService: TodoService) {}
 
   impHandler() {
     this.todo.isImportant = !this.todo.isImportant;
@@ -24,6 +21,6 @@ export class ListItemComponent implements OnInit {
   }
 
   delHandler() {
-    this.delTodo.emit(this.todo.id);
+    this.todoService.delTodo(this.todo.id);
   }
 }

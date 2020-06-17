@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-todo-search',
@@ -6,11 +7,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./todo-search.component.css'],
 })
 export class TodoSearchComponent {
-  @Output() searchInput = new EventEmitter<string>();
-
   searchPlaceholder = 'Search todo...';
 
-  onChangeHandler(value: string) {
-    this.searchInput.emit(value);
+  constructor(private todoService: TodoService) {}
+
+  onChangeHandler(searchValue: string) {
+    this.todoService.setTerm(searchValue);
   }
 }

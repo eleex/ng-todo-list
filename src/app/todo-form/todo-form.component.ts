@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-todo-form',
@@ -6,21 +7,21 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./todo-form.component.css'],
 })
 export class TodoFormComponent {
-  @Output() addTodo = new EventEmitter<string>();
-
   inpValue = '';
 
   isDisabled = true;
+
+  constructor(private todoService: TodoService) {}
 
   onChangeInput() {
     this.isDisabled = this.inpValue.trim() === '' ? true : false;
   }
 
-  addTodoHandler() {
+  addTodo() {
     if (this.inpValue.trim()) {
-      this.addTodo.emit(this.inpValue);
+      this.todoService.addTodo(this.inpValue);
+
       this.inpValue = '';
-      this.isDisabled = true;
     }
   }
 }
