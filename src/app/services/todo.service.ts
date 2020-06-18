@@ -18,8 +18,6 @@ export class TodoService {
 
   currentId = 20;
 
-  term = '';
-
   getTodoList(): Todo[] {
     return this.todoList;
   }
@@ -40,9 +38,5 @@ export class TodoService {
     const index = this.todoList.findIndex((todo) => todo.id === id);
 
     this.todoList.splice(index, 1);
-  }
-
-  setTerm(term: string) {
-    this.term = term;
   }
 }

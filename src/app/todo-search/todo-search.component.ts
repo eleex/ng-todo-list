@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-todo-search',
@@ -8,10 +7,4 @@ import { TodoService } from '../services/todo.service';
 })
 export class TodoSearchComponent {
   searchPlaceholder = 'Search todo...';
-
-  constructor(private todoService: TodoService) {}
-
-  onChangeHandler(searchValue: string) {
-    this.todoService.setTerm(searchValue);
-  }
 }
